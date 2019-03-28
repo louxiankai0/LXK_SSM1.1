@@ -1,0 +1,54 @@
+body{
+	font-size: 12px;
+}
+#header{
+	position: relative;
+	width: 100%;
+	margin-top: 2px;
+	
+}
+#header ul li{
+	margin-left: 30px;
+}
+#header ul li a{
+	cursor: pointer;
+}
+#content{
+	position: relative;
+	width: 500px;
+	margin:50px auto 0px;
+}
+#content #form1 {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+#content #form1 dl dt{
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 3px; /*文字间距*/
+	text-indent: 28px;
+	border-bottom: 1px solid #cccccc;
+	text-align: center;
+}
+#content #form1 dl dd{
+	margin: 20px 0px;
+	text-align: center;
+}
+#content #form1 dl dd span{
+	display: inline-block;
+	width: 100px;
+	text-indent: 30px; /*首行缩进*/
+}
+#content #form1 dl dd .input-size{
+	width: 300px;
+	text-align:center;
+	vertical-align:middle;
+}
+
+#content #form1 dl dd.btn-groups{
+	text-align: center;
+}
+#content #form1 dl dd.btn-groups input{
+	margin: 20px;
+}

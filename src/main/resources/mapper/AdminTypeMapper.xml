@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- com.dao.AdminTypeDao对应Dao接口 -->
+<mapper namespace="com.dao.AdminTypeDao">
+	<!-- 查询类型信息 -->
+	<select id="selectGoodsType"  resultType="GoodsType" >
+		select id,typename from goodstype
+	</select>
+	<select id="selectGoodsTypeById" resultType="GoodsType" parameterType="Integer">
+		select * from goodstype where id = #{id}
+	</select>
+	<!--分页查询-->
+	<select id="selectAllGoodsTypeByPage" resultType="GoodsType" parameterType="map" >
+		select * from goodstype order by id limit #{startIndex}, #{perPageSize}
+	</select>
+
+	<insert id="addType" parameterType="String">
+		insert into goodstype (id, typename) values (null, #{typename})
+	</insert>
+
+	<delete id="deleteAType" parameterType="Integer">
+		delete from goodstype where id = #{id}
+	</delete>
+
+	<!-- 删除多个类型 -->
+	<delete id="deleteType"  parameterType="List">
+		delete from goodstype where id in
+		<foreach item="item" index="index" collection="list"
+				 open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+
+	<select id="selectGoodsByType" resultType="Goods" parameterType="Integer">
+		select * from goodstable where goodstype_id=#{id}
+	</select>
+
+	<update id="updateGoodsTypeById" parameterType="GoodsType">
+		update goodstype
+		<set>
+			<if test="typename != null">
+				typename = #{typename},
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+	<!--查询关联商品-->
+	<select id="selectGoods" parameterType="Integer" resultType="map">
+		select * from goodstable where goodstype_id=#{id}
+	</select>
+
+</mapper>
