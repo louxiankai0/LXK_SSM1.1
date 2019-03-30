@@ -10,6 +10,7 @@
         <typeAlias alias="Notice" type="com.po.Notice"/>
         <typeAlias alias="Buser" type="com.po.Buser"/>
         <typeAlias alias="Order" type="com.po.Order"/>
+
     </typeAliases>
     <mappers>
         <mapper resource="mapper/AdminGoodsMapper.xml"/>

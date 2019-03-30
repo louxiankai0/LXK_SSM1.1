@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	<!-- 生成订单详情 -->
 	<insert id="addOrderDetail" parameterType="map">
-		insert into ORDERDETAIL (orderbasetable_id, goodstable_id, SHOPPINGNUM) select #{ordersn}, goodstable_id, SHOPPINGNUM from CARTTABLE where busertable_id = #{uid} 
+		insert into ORDERDETAIL (orderbasetable_id, goodstable_id, SHOPPINGNUM) select #{ordersn}, goodstable_id, SHOPPINGNUM from CARTTABLE where busertable_id = #{uid}
 	</insert>
 	<!-- 查询商品购买量，以便更新库存使用 -->
 	<select id="selectGoodsShop"  parameterType="Integer" resultType="map">
@@ -27,4 +27,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="pay" parameterType="Integer">
 		update orderbasetable set status=1 where id=#{ordersn}
 	</update>
+
+	<!-- 添加一个订单，成功后将主键值回填给id（po类的属性）-->
+	<insert id="addReturnOrder" keyProperty="rid" useGeneratedKeys="true">
+		insert into returnorder (orderdetail_id, goid, shoppingnum) values (#{oid}, #{gid}, #{shoppingnum})
+	</insert>
+
+	<!-- 查询商品购买量，以便更新库存使用 -->
+	<select id="selectGoodsShopByoid"  parameterType="Integer" resultType="map">
+		select shoppingnum gshoppingnum, goodstable_id ggid from orderdetail where oid=#{oid}
+	</select>
+	<!-- 更新商品库存 -->
+	<update id="updateStoreR" parameterType="map">
+		update GOODSTABLE set GSTORE=GSTORE+#{gshoppingnum} where id=#{ggid}
+	</update>
+    <!-- 更新状态 -->
+    <update id="returnGoods" parameterType="Integer">
+        update orderdetail set status=1 where oid=#{oid}
+    </update>
+
 </mapper>

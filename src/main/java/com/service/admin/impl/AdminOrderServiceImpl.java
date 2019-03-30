@@ -2,6 +2,7 @@ package com.service.admin.impl;
 
 import com.dao.AdminOrderDao;
 import com.po.Order;
+import com.service.admin.AdminOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,7 +14,7 @@ import java.util.Map;
 
 @Service("adminOrderService")
 @Transactional
-public class AdminOrderServiceImpl implements AdminOrderService{
+public class AdminOrderServiceImpl implements AdminOrderService {
 	@Autowired
 	private AdminOrderDao adminOrderDao;
 	@Override

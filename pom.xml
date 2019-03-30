@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.lxk.ssm1</groupId>
-  <artifactId>ssm1</artifactId>
+  <groupId>com.lxk.ssm</groupId>
+  <artifactId>ssm</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>ssm1 Maven Webapp</name>
+  <name>ssm Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -148,10 +148,18 @@
       <version>2.3.2</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/com.alipay.sdk/alipay-sdk-java -->
+    <dependency>
+      <groupId>com.alipay.sdk</groupId>
+      <artifactId>alipay-sdk-java</artifactId>
+      <version>3.4.27.ALL</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>
-    <finalName>ssm1</finalName>
+    <finalName>ssm</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
