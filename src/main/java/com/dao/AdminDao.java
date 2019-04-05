@@ -9,5 +9,5 @@ import java.util.List;
 @Repository("adminDao")
 @Mapper
 public interface AdminDao {
-	public List<Auser> login(Auser auser);
+    List<Auser> login(Auser auser);
 }

@@ -3,6 +3,7 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/alipay/config/AlipayConfig.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/before/daohang.css" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

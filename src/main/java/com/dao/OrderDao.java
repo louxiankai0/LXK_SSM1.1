@@ -12,17 +12,25 @@ import java.util.Map;
 @Repository("orderDao")
 @Mapper
 public interface OrderDao {
-	public int addOrder(Order order);
-	public int addOrderDetail(Map<String, Object> map);
-	public List<Map<String, Object>> selectGoodsShop(Integer uid);
-	public int updateStore(Map<String, Object> map);
-	public int clear(Integer uid);
-	public int pay(Integer ordersn);
+    int addOrder(Order order);
+
+    int addOrderDetail(Map<String, Object> map);
+
+    List<Map<String, Object>> selectGoodsShop(Integer uid);
+
+    int updateStore(Map<String, Object> map);
+
+    int clear(Integer uid);
+
+    int pay(Integer ordersn);
 
 
-	public int addReturnOrder(@Param("oid")Integer oid,@Param("gid")Integer gid,
-							  @Param("shoppingnum")Integer shoppingnum);
-	public List<Map<String, Object>> selectGoodsShopByoid(Integer oid);
-	public int updateStoreR(Map<String, Object> map);
-	int returnGoods(Integer oid);
+    int addReturnOrder(@Param("oid") Integer oid, @Param("gid") Integer gid,
+                       @Param("shoppingnum") Integer shoppingnum);
+
+    List<Map<String, Object>> selectGoodsShopByoid(Integer oid);
+
+    int updateStoreR(Map<String, Object> map);
+
+    int returnGoods(Integer oid);
 }

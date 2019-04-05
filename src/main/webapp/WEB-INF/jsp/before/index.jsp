@@ -42,7 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<img class="samllimg" alt="" src="logos/${sg.gpicture}" /></a></li>
 								<li class="iteration1">
 								<a href="goodsDetail?id=${sg.id }">${sg.gname }</a><br />
-								 售价：<font class="f1">￥${sg.grprice }元</font><br /></li>
+								 售价：<font class="f1">￥${sg.grprice }元/次</font><br /></li>
 							</ul>
 						</c:forEach>
 					</div>
@@ -65,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<img class="samllimg" alt="" src="logos/${sg.gpicture}" /></a></li>
 							<li class="iteration1">
 							<a href="goodsDetail?id=${sg.id }">${sg.gname }</a><br />
-							 售价：<font class="f1">￥${sg.grprice }元</font><br /></li>
+							 售价：<font class="f1">￥${sg.grprice }元/次</font><br /></li>
 						</ul>
 					</c:forEach>
 					</div>
@@ -77,7 +77,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="AreaR">
 				<div class="AreaM clearfix">
 					<div id="focus">
-						<img src="images/before/540.jpg" />
+						<img src="images/before/share.jpg" />
 					</div>
 				</div>
 				<div class="AreaRR clearfix">
@@ -105,7 +105,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="box">
 					<div class="box_color ared">
 						<div class="title_bt">
-							<span><a href="#">更多</a></span>
+							<span><a href="moreDetail">更多</a></span>
 							<h3>最新商品</h3>
 						</div>
 						<div class="itemgood_nr clearfix">
@@ -119,7 +119,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</p>
 											<p class="wz">
 												<strong><a href="goodsDetail?id=${sg.id }">${sg.gname }</a></strong>
-												<em>现价:<span>￥${sg.grprice}</span></em>
+												<em>现价:<span>￥${sg.grprice}/次</span></em>
 											</p>
 										</div>
 									</li>

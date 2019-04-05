@@ -13,4 +13,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteOrderBase" parameterType="Integer">
 		delete from orderbasetable where id=#{id}
 	</delete>
+	<select id="orderDetail" resultType="map"  parameterType="Integer">
+		select odt.oid, gt.id, gt.gname, gt.goprice, gt.grprice, gt.gstore, gt.gpicture, odt.shoppingnum, odt.status, odt.returndate from  GOODSTABLE gt, ORDERDETAIL odt
+		where  odt.orderbasetable_id=#{ordersn} and gt.id=odt.goodstable_id
+	</select>
+
 </mapper>

@@ -45,6 +45,13 @@ public class IndexController {
 	}
 
 	/**
+	 * 转到更多页面
+	 */
+	@RequestMapping("/moreDetail")
+	public String moreDetail(Model model,Goods goods){
+		return indexService.moreDetail(model,goods);
+	}
+	/**
 	 * 转到公告页面
 	 */
 	@RequestMapping("/selectANotice")

@@ -9,8 +9,11 @@ import java.util.List;
 @Repository("adminNoticeDao")
 @Mapper
 public interface AdminNoticeDao {
-	public int addNotice(Notice notice);
-	public List<Notice> deleteNoticeSelect();
-	public int deleteNotice(Integer id);
-	public Notice selectANotice(Integer id);
+    int addNotice(Notice notice);
+
+    List<Notice> deleteNoticeSelect();
+
+    int deleteNotice(Integer id);
+
+    Notice selectANotice(Integer id);
 }

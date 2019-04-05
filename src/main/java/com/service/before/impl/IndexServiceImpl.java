@@ -69,5 +69,15 @@ public class IndexServiceImpl implements IndexService {
 		model.addAttribute("searchlist", list);
 		return "before/searchResult";
 	}
-	
+
+	@Override
+	public String moreDetail(Model model,Goods goods) {
+		if(goods.getId() == null) {
+			goods.setId(0);
+		}
+		model.addAttribute("lastedlist", indexDao.getGoods(goods));
+
+		return "before/moreDetail";
+	}
+
 }

@@ -32,4 +32,10 @@ public class AdminOrderServiceImpl implements AdminOrderService {
 		return "forward:/adminOrder/orderInfo";
 	}
 
+	@Override
+	public String orderDetail(Model model, Integer ordersn) {
+		model.addAttribute("myOrderDetail", adminOrderDao.orderDetail(ordersn));
+		return "admin/userOrderDetail";
+	}
+
 }

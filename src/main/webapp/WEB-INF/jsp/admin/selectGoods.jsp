@@ -81,10 +81,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 
 <div id="content">
-	<form id="form1" method="post" action="adminGoods/selectGoods" class="form-inline">
+	<%--<form id="form1" method="post" action="adminGoods/selectGoods" class="form-inline">
 		<input type="text" name="gname" placeholder="按事项名称搜索!" autofocus class="form-control input-sm" />
 		<input type="submit" value="搜 索" class="btn btn-warning btn-sm" />
-	</form>
+	</form>--%>
 	<form id="form2" action="adminGoods/deleteGoods" name="deleteForm">
 	<table class="table table-bordered table-hover">
 		<tr>

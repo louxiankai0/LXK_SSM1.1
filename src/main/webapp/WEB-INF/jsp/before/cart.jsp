@@ -54,7 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					cellspacing="1" bgcolor="#dddddd">
 					<tr>
 						<th>商品信息</th>
-						<th>单价（元）</th>
+						<th>单价（元/次）</th>
 						<th>数量</th>
 						<th>小计</th>
 						<th>操作</th>

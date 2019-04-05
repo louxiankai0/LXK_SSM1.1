@@ -10,7 +10,9 @@ import java.util.Map;
 @Repository("userCenterDao")
 @Mapper
 public interface UserCenterDao {
-	public List<Map<String, Object>> myOrder(Integer bid);
-	public List<Map<String, Object>> myFocus(Integer bid);
-	public List<Map<String, Object>> orderDetail(Integer ordersn);
+    List<Map<String, Object>> myOrder(Integer bid);
+
+    List<Map<String, Object>> myFocus(Integer bid);
+
+    List<Map<String, Object>> orderDetail(Integer ordersn);
 }

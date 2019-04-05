@@ -10,14 +10,23 @@ import java.util.Map;
 @Repository("adminGoodsDao")
 @Mapper
 public interface AdminGoodsDao {
-	public List<Goods> selectGoods();
-	public List<Goods> selectAllGoodsByPage(Map<String, Object> map);
-	public int addGoods(Goods goods);
-	public Goods selectGoodsById(Integer id);
-	public int deleteGoods(List<Integer> ids);
-	public int deleteAGoods(Integer id);
-	public int updateGoodsById(Goods goods);
-	public List<Map<String, Object>> selectCartGoods(Integer id);
-	public List<Map<String, Object>> selectFocusGoods(Integer id);
-	public List<Map<String, Object>> selectOrderdetailGoods(Integer id);
+    List<Goods> selectGoods();
+
+    List<Goods> selectAllGoodsByPage(Map<String, Object> map);
+
+    int addGoods(Goods goods);
+
+    Goods selectGoodsById(Integer id);
+
+    int deleteGoods(List<Integer> ids);
+
+    int deleteAGoods(Integer id);
+
+    int updateGoodsById(Goods goods);
+
+    List<Map<String, Object>> selectCartGoods(Integer id);
+
+    List<Map<String, Object>> selectFocusGoods(Integer id);
+
+    List<Map<String, Object>> selectOrderdetailGoods(Integer id);
 }

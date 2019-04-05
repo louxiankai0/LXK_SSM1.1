@@ -11,13 +11,21 @@ import java.util.Map;
 @Repository("adminTypeDao")
 @Mapper
 public interface AdminTypeDao {
-	public List<GoodsType> selectGoodsType();
-	public List<GoodsType> selectAllGoodsTypeByPage(Map<String, Object> map);
-	public int addType(GoodsType goodstype);
-	public GoodsType selectGoodsTypeById(Integer id);
-	public int deleteAType(Integer id);
-	public int deleteType(List<Integer> ids);
-	public List<Goods> selectGoodsByType(Integer id);
-	public int updateGoodsTypeById(GoodsType goodsType);
-	public List<Map<String, Object>> selectGoods(Integer id);
+    List<GoodsType> selectGoodsType();
+
+    List<GoodsType> selectAllGoodsTypeByPage(Map<String, Object> map);
+
+    int addType(GoodsType goodstype);
+
+    GoodsType selectGoodsTypeById(Integer id);
+
+    int deleteAType(Integer id);
+
+    int deleteType(List<Integer> ids);
+
+    List<Goods> selectGoodsByType(Integer id);
+
+    int updateGoodsTypeById(GoodsType goodsType);
+
+    List<Map<String, Object>> selectGoods(Integer id);
 }

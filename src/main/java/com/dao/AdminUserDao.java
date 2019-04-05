@@ -9,6 +9,7 @@ import java.util.List;
 @Repository("adminUserDao")
 @Mapper
 public interface AdminUserDao {
-	public List<Buser> userInfo();
-	public int deleteuserManager(Integer id);
+    List<Buser> userInfo();
+
+    int deleteuserManager(Integer id);
 }

@@ -19,4 +19,8 @@ public class AdminOrderController extends BaseController {
 	public String deleteorderManager(Integer id) {
 		return adminOrderService.deleteorderManager(id);
 	}
+	@RequestMapping("/orderDetail")
+	public String orderDetail(Model model,Integer ordersn){
+		return adminOrderService.orderDetail(model, ordersn);
+	}
 }
