@@ -16,6 +16,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	@RequestMapping("/register")
+	//@ModelAttribute自动将前台传递的参数注入到buser中
 	public String register(@ModelAttribute Buser buser, Model model, HttpSession session, String code) {
 		return userService.register(buser, model, session, code);
 	}

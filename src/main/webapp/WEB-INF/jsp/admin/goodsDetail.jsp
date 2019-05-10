@@ -18,7 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 	<table border=1 style="border-collapse: collapse">
 		<caption>
-			<a size=4 face=华文新魏>物品详情</a>
+			<a style="size: 10px">物品详情</a>
 		</caption>
 		<tr>
 			<td>名称</td>

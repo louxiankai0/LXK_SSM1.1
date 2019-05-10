@@ -15,7 +15,7 @@
 	<!-- 使用扫描机制，扫描包 -->
 	<context:component-scan base-package="com.controller" />
 	<mvc:annotation-driven />
-    <!-- 静态资源需要单独处理，不需要dispatcher servlet -->  
+    <!-- 静态资源需要单独处理，不需要dispatcher servlet再进行配置 -->
     <mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
 	<mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
     <mvc:resources location="/images/" mapping="/images/**"></mvc:resources>

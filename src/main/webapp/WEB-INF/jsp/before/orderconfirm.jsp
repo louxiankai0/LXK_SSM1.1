@@ -38,8 +38,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              <table width="100%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tr>
               <th bgcolor="#ffffff">物品名称</th>
-              <th bgcolor="#ffffff">市场价格</th>
-              <th bgcolor="#ffffff">购买数量</th>
+              <th bgcolor="#ffffff">租借价格</th>
+              <th bgcolor="#ffffff">租借数量</th>
               <th bgcolor="#ffffff">小计</th>
             </tr> 
            <c:forEach var="ce" items="${cartlist}"> 

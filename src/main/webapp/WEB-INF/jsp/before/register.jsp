@@ -19,6 +19,7 @@
 <script type="text/javascript">
 	//刷新验证码
 	function refreshCode(){
+		//getElementById查找document中特定元素
 		document.getElementById("code").src = "validateCode?" + Math.random();
     }
 	//表单验证

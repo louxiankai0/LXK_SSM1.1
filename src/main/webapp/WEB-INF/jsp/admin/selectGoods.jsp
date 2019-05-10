@@ -115,6 +115,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;共${totalCount}条记录&nbsp;&nbsp;共${totalPage}页&nbsp;&nbsp;
 				第${pageCur}页&nbsp;&nbsp;
+				<!-- 将URL格式化为一个字符串，然后存储在一个变量中 c:param中name属性表明参数的名称，value属性表明参数的值-->
 				<c:url var="url_pre" value="adminGoods/selectGoods">
 					<c:param name="pageCur" value="${pageCur - 1 }"/>
 				</c:url>

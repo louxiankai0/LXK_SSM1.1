@@ -3,15 +3,16 @@
 		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.OrderDao">
-	<!-- 添加一个订单，成功后将主键值回填给id（po类的属性）-->
+	<!-- 添加订单和订单详情连续操作，必须有主键ID值才能生成订单详情，所以useGeneratedKeys为ture -->
+	<!-- 添加一个订单，useGeneratedKeys为ture，keyProperty为id，则允许 JDBC 支持自动生成id，并可将自动生成的id返回。-->
 	<insert id="addOrder" parameterType="Order" keyProperty="id" useGeneratedKeys="true">
 		insert into orderbasetable (busertable_id, amount, status, orderdate) values (#{busertable_id}, #{amount}, 0, now())
 	</insert>
-	<!-- 生成订单详情 -->
+	<!-- 生成订单详情 查询订单ID和物品ID和租借数量进行添加 -->
 	<insert id="addOrderDetail" parameterType="map">
 		insert into orderdetail (orderbasetable_id, goodstable_id, shoppingnum) select #{ordersn}, goodstable_id, shoppingnum from carttable where busertable_id = #{uid}
 	</insert>
-	<!-- 查询物品购买量，以便更新库存使用 -->
+	<!-- 查询物品租借量，以便更新库存使用 -->
 	<select id="selectGoodsShop"  parameterType="Integer" resultType="map">
 		select shoppingnum gshoppingnum, goodstable_id gid from carttable where busertable_id=#{uid}
 	</select>
@@ -28,7 +29,7 @@
 		update orderbasetable set status=1 where id=#{ordersn}
 	</update>
 
-	<!-- 添加一个订单，成功后将主键值回填给id（po类的属性）-->
+	<!-- 添加一个归还订单，成功后将主键值回填给id（po类的属性）-->
 	<insert id="addReturnOrder" keyProperty="rid" useGeneratedKeys="true">
 		insert into returnorder (orderdetail_id, goid, shoppingnum) values (#{oid}, #{gid}, #{shoppingnum})
 	</insert>

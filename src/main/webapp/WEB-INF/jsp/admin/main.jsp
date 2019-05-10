@@ -155,10 +155,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			// 判断菜单是否关闭
 			if (subNodes.css("display") == "none") { //关闭
 				// 展开菜单，即显示子菜单节点
-				// subNodes.css("display","block");
 				subNodes.slideDown();
 			} else { //展开
-				// subNodes.css("display","none");
 				subNodes.slideUp();
 			}
 		}

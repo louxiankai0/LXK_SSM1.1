@@ -26,13 +26,18 @@ public class IndexServiceImpl implements IndexService {
 	private AdminNoticeDao adminNoticeDao;
 	@Override
 	public String before(Model model, HttpSession session, Goods goods) {
+		//将物品类别保存在session中，可以一直在头部显示物品类别
 		session.setAttribute("goodsType", adminTypeDao.selectGoodsType());
+		//租借排行
 		model.addAttribute("salelist", indexDao.getSaleOrder());
+		//关注排行
 		model.addAttribute("focuslist", indexDao.getFocusOrder());
+		//公告
 		model.addAttribute("noticelist", indexDao.selectNotice());
 		if(goods.getId() == null) {
 			goods.setId(0);
 		}
+		//最新物品
 		model.addAttribute("lastedlist", indexDao.getLastedGoods(goods));
 		return "before/index";
 	}
@@ -65,7 +70,9 @@ public class IndexServiceImpl implements IndexService {
 
 	@Override
 	public String search(Model model, String mykey) {
+		//用list保存根据前台传递过来的mykey所查询出的物品信息
 		List<Goods> list = indexDao.search(mykey);
+		//返回给前端
 		model.addAttribute("searchlist", list);
 		return "before/searchResult";
 	}

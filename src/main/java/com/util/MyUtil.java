@@ -13,7 +13,9 @@ public class MyUtil {
 	public static String getStringID(){
 		String id=null;
 		Date date=new Date();
+		//SimpleDateFormat格式化日期时间
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmssSSS"); 
+		//格式化成date格式
 		id=sdf.format(date);
 		return id;
 	}

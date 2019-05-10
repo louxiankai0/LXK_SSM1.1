@@ -40,13 +40,14 @@ public class AdminGoodsServiceImpl implements AdminGoodsService {
 			//防止文件重名
 			newFileName = MyUtil.getStringID() + fileType;
 			goods.setGpicture(newFileName);
-			File targetFile = new File(realpath, newFileName); 
+			File targetFile = new File(realpath, newFileName);
+			//判断targetFile是否存在
 			if(!targetFile.exists()){  
-	            targetFile.mkdirs();  
+	            targetFile.mkdirs();  //创建此抽象路径名指定的目录，包括所有必需但不存在的父目录
 	        } 
 			//上传
 	        try {   
-	        	goods.getLogoImage().transferTo(targetFile);
+	        	goods.getLogoImage().transferTo(targetFile);//MultipartFile 的 transferTo 将文件上传
 	        } catch (Exception e) {  
 	            e.printStackTrace();  
 	        }  
@@ -74,16 +75,21 @@ public class AdminGoodsServiceImpl implements AdminGoodsService {
 	 */
 	@Override
 	public String selectGoods(Model model, Integer pageCur, String act) {
+		//用List接收数据库查出的物品数据
 		List<Goods> allGoods = adminGoodsDao.selectGoods();
+		//用一个temp去接收条数
 		int temp = allGoods.size();
 		model.addAttribute("totalCount", temp);
+		//定义一个总页数
 		int totalPage = 0;
 		if (temp == 0) {
 			totalPage = 0;//总页数
 		} else {
 			//返回大于或者等于指定表达式的最小值
+			//ceil进行上舍入，返回值大于或等于给定的参数
 			totalPage = (int) Math.ceil((double) temp / 5);
 		}
+		//第几页
 		if (pageCur == null) {
 			pageCur = 1;
 		}

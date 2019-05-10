@@ -35,13 +35,16 @@ public class ValidateCodeController {
 		response.setHeader("Pragma", "No-cache");
 		response.setHeader("Cache-Control", "no-cache");
 		response.setDateHeader("Expires", 0);
-		// 设置响应的MIME信息
+		// 设置响应的MIME信息，让浏览器判断文件为jpeg图片
 		response.setContentType("image/jpeg");
 
+		//设置宽、高、颜色
 		BufferedImage image = new BufferedImage(WIDTH, HEIGHT,
 				BufferedImage.TYPE_INT_RGB);
 		Font mFont = new Font("Arial", Font.TRUETYPE_FONT, 18);
+		//为组件创建一个图形上下文
 		Graphics g = image.getGraphics();
+		//随机数
 		Random rd = new Random();
 
 		// 设置背景色
@@ -59,6 +62,7 @@ public class ValidateCodeController {
 		// 随机产生的验证码
 		String result = "";
 		for (int i = 0; i < LENGTH; ++i) {
+			//生成一个随机的int值，该值介于[0,code.length)的区间
 			result += code[rd.nextInt(code.length)];
 		}
 		HttpSession se = request.getSession();

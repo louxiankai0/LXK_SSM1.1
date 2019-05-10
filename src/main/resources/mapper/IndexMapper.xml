@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.IndexDao">
-    <!-- 查询销售排行 -->
+    <!-- 查询销售排行 sum总计 -->
     <select id="getSaleOrder" resultType="map">
 		select sum(od.shoppingnum) shopnumber,
 				gd.id id,
@@ -20,7 +20,7 @@
 				 gd.gpicture
 		order by shopnumber desc limit 10
 	</select>
-    <!-- 人气排行 -->
+    <!-- 人气排行 count求goodstable_id所有记录数 -->
     <select id="getFocusOrder" resultType="map">
 		select count(ft.goodstable_id) fn, gt.id id, gt.gname gname,
 		gt.grprice grprice, gt.gpicture gpicture
@@ -54,7 +54,7 @@
     <select id="selectGoodsById" resultType="Goods" parameterType="Integer">
 		select gt.*,gy.typename from goodstable gt,goodstype gy where gt.id=#{id} and gt.goodstype_id = gy.id
 	</select>
-    <!-- 首页搜索 -->
+    <!-- 首页搜索 concat拼接-->
     <select id="search" resultType="Goods" parameterType="String">
 		select gt.*, gy.typename from goodstable gt,goodstype gy where gt.goodstype_id = gy.id
 		and gt.gname like concat('%',#{mykey},'%')

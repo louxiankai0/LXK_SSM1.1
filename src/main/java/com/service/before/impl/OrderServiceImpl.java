@@ -35,18 +35,21 @@ public class OrderServiceImpl implements OrderService {
 		orderDao.addOrder(order);
 		//生成订单详情
 		Map<String, Object> map = new HashMap<String, Object>();
+		//向map添加order的ID和用户ID
 		map.put("ordersn", order.getId());
 		map.put("uid", MyUtil.getUserId(session));
+		//生成订单详情
 		orderDao.addOrderDetail(map);
 		//更新物品库存
-		//更新物品库存1.查询物品购买量，以便更新库存使用
+		//更新物品库存1.根据用户ID查询购物车中物品租借量以及物品ID，以便更新库存使用
 		List<Map<String, Object>> list = orderDao.selectGoodsShop(MyUtil.getUserId(session));
-		//更新物品库存2.根据物品购买量更新库存
+		//更新物品库存2.根据list中物品租借量和物品ID更新库存
 		for (Map<String, Object> map2 : list) {
 			orderDao.updateStore(map2);
 		}
 		//清空购物车
 		orderDao.clear(MyUtil.getUserId(session));
+		//添加订单号到前端
 		model.addAttribute("ordersn", order.getId());
 		return "before/orderdone";
 	}

@@ -18,10 +18,12 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 	@Override
 	public String register(Buser buser, Model model, HttpSession session, String code) {
+		//将前台传递的验证码code进行比较，不考虑大小写
 		if(!code.equalsIgnoreCase(session.getAttribute("code").toString())) {
 			model.addAttribute("codeError", "验证码错误！");
 			return "before/register";
 		}
+		//用int类型n接收插入数据条数
 		int n = userDao.register(buser);
 		if(n > 0) {
 			model.addAttribute("msg","注册成功");
@@ -37,12 +39,16 @@ public class UserServiceImpl implements UserService {
 			model.addAttribute("msg", "验证码错误！");
 			return "before/login";
 		}
+		//定义Buser类型的ruser为空
 		Buser ruser = null;
+		//用list接收通过传入的buser值查询出的数据
 		List<Buser> list = userDao.login(buser);
 		if(list.size() > 0) {
+			//获取list中第一条数据
 			ruser = list.get(0);
 		}
 		if(ruser != null) {
+			//将ruser存入session
 			session.setAttribute("bruser", ruser);
 			return "forward:/before";
 		}else {

@@ -20,7 +20,7 @@
 		insert into goodstable (id,gname,goprice,grprice,gstore,gpicture,goodstype_id) 
 		values (null, #{gname}, #{goprice}, #{grprice}, #{gstore}, #{gpicture}, #{goodstype_id})
 	</insert>
-	<!-- 删除多个物品 -->
+	<!-- 删除多个物品,迭代 item中每一个元素进行迭代时的别名 index表示在迭代过程中，每次迭代到的位置 open以(开始 -->
 	<delete id="deleteGoods"  parameterType="List">
 		delete from goodstable where id in
 		<foreach item="item" index="index" collection="list"

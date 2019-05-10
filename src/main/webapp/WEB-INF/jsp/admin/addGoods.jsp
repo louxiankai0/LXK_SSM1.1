@@ -26,6 +26,16 @@
         function cancel(){
             document.forms[0].action = "";
         }
+        //表单验证
+        function checkForm(){
+            var goprice = document.addGoods.goprice.value;
+            if(goprice > 1000){
+                alert("东西价值过高，为了财产安全，无法进行共享！");
+                return false;
+            }
+            document.addGoods.submit();
+            return true;
+        }
     </script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
@@ -44,7 +54,7 @@
 </div>
 
 <div id="content">
-    <form:form action="adminGoods/addGoods" method="post" modelAttribute="goods" enctype="multipart/form-data" id="form1">
+    <form:form action="adminGoods/addGoods" name="addGoods" method="post" modelAttribute="goods" enctype="multipart/form-data" id="form1">
         <dl>
             <dt>添加物品</dt>
             <table border=1 class="table table-bordered table-hover">
@@ -88,7 +98,7 @@
                 </tr>
             </table>
 
-            <dd class="btn-groups"><input type="submit" value="确 定" class="btn btn-primary btn-sm" />
+            <dd class="btn-groups"><input type="button" onclick="checkForm()" value="确 定" class="btn btn-primary btn-sm" />
                 <input type="reset" value="重 置" class="btn btn-success btn-sm" onclick="cancel()" />
             </dd>
         </dl>

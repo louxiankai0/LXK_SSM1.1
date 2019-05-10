@@ -34,6 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span>租借排行</span>
 					</div>
 					<div class="top10List clearfix">
+						<!-- varStatus用来表示迭代的状态，可以访问到迭代自身的信息,index当前迭代从0开始 -->
 						<c:forEach items="${salelist }" var="sg" varStatus="status">
 							<ul class="clearfix">
 								<img class="iteration" src="images/before/top_${status.index+1 }.gif" />
@@ -118,6 +119,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<img src="logos/${sg.gpicture}" /></a>
 											</p>
 											<p class="wz">
+												<!-- strong加粗 -->
 												<strong><a href="goodsDetail?id=${sg.id }">${sg.gname }</a></strong>
 												<em>租借价:<span>￥${sg.grprice}/次</span></em>
 											</p>
