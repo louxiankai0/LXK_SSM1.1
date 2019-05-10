@@ -10,6 +10,7 @@ import com.exception.AdminLoginNoException;
 public class BaseController {
     /**
      * 登录权限控制，处理方法执行前执行该方法
+     * @ModelAttribute首先被控制器执行
      * @throws AdminLoginNoException
      */
     @ModelAttribute

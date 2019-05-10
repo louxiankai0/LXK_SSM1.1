@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!-- 配置了po类的别名，指定了sql映射文件位置 -->
     <typeAliases>
         <typeAlias alias="Auser" type="com.po.Auser"/>
         <typeAlias alias="Goods" type="com.po.Goods"/>

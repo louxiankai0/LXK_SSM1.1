@@ -21,6 +21,7 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public String login(Auser auser, Model model, HttpSession session) {
 		if(adminDao.login(auser) != null && adminDao.login(auser).size() > 0) {
+			//将auser保存到session中
 			session.setAttribute("auser", auser);
 			//添加物品与修改物品页面使用
 			session.setAttribute("goodsType", adminTypeDao.selectGoodsType());

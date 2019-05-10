@@ -16,7 +16,7 @@ public class MyExceptionHandler implements HandlerExceptionResolver {
 			Exception arg3) {
 	   	Map<String, Object> model = new HashMap<String, Object>();  
         model.put("ex", arg3); 
-        // 根据不同错误转向不同页面
+        // 根据不同错误转向不同页面 instanceof：运行时指出对象是否是特定类的一个实例
        if(arg3 instanceof AdminLoginNoException){
         	//登录页面需要auser对象
         	arg0.setAttribute("auser", new Auser());

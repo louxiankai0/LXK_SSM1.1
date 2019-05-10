@@ -27,7 +27,7 @@ public class ValidateCodeController {
 	private static final int WIDTH = 50;
 	private static final int HEIGHT = 20;
 	private static final int LENGTH = 4;
-	@RequestMapping("/validateCode")
+	@RequestMapping("/validateCode")//接收jsp页面的请求路径
 	public void validateCode(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
