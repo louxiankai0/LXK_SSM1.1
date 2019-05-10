@@ -47,7 +47,7 @@
 
             <table border=1 class="table table-bordered table-hover">
                 <tr>
-                    <td>名称<font color="red">*</font></td>
+                    <td>名称<a style="color: red">*</a></td>
                     <td>
                         <input type="text" name="typename" value="${goodstype.typename}" autofocus class="form-control input-size" required/>
                         <input type="hidden" name="id" value="${goodstype.id}">

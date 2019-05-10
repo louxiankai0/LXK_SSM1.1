@@ -162,6 +162,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				subNodes.slideUp();
 			}
 		}
+		function SupendButtonClick(obj) {
+			//清空其它同类按钮选中颜色
+			$('a[id^="SupendButton-"]').css("background-color", "#F5F5F5");//按钮原来颜色
+			//点击后变色
+			$(obj).css("background-color", "#BBBBBB");
+		}
 	</script>
 	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -176,12 +182,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="sideBar">
 	<ul class="nav nav-pills nav-stacked">
 		<li id="1" class="active" onclick="openOrCloseMenu(1)"><a>个人中心</a></li>
-		<li parentId="1"><a href="adminGoods/selectGoods" target="center">商品管理</a></li>
-		<li parentId="1"><a href="adminType/selectType" target="center">类型管理</a></li>
-		<li parentId="1"><a href="adminUser/userInfo" target="center">用户管理</a></li>
-		<li parentId="1"><a href="adminOrder/orderInfo" target="center">订单管理</a></li>
-		<li parentId="1"><a href="adminNotice/deleteNoticeSelect" target="center">公告管理</a></li>
-
+		<li parentId="1"><a href="adminGoods/selectGoods" target="center" id="SupendButton-one" onclick=SupendButtonClick(this);><span class="glyphicon glyphicon-list-alt"></span> 物品管理</a></li>
+		<li parentId="1"><a href="adminType/selectType" target="center" id="SupendButton-two" onclick=SupendButtonClick(this);><span class="glyphicon glyphicon-tags"></span> 类型管理</a></li>
+		<li parentId="1"><a href="adminUser/userInfo" target="center" id="SupendButton-three" onclick=SupendButtonClick(this);><span class="glyphicon glyphicon-user"></span> 用户管理</a></li>
+		<li parentId="1"><a href="adminOrder/orderInfo" target="center" id="SupendButton-four" onclick=SupendButtonClick(this);><span class="glyphicon glyphicon-shopping-cart"></span> 订单管理</a></li>
+		<li parentId="1"><a href="adminNotice/deleteNoticeSelect" target="center" id="SupendButton-five" onclick=SupendButtonClick(this);><span class="glyphicon glyphicon-comment"></span> 公告管理</a></li>
 	</ul>
 </div>
 	<div id="main">

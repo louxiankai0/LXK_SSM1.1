@@ -70,7 +70,7 @@ public class AdminGoodsServiceImpl implements AdminGoodsService {
 		}
 	}
 	/**
-	 * 查询商品
+	 * 查询物品
 	 */
 	@Override
 	public String selectGoods(Model model, Integer pageCur, String act) {
@@ -110,7 +110,7 @@ public class AdminGoodsServiceImpl implements AdminGoodsService {
 		}
 	}
 	/**
-	 * 查询一个商品
+	 * 查询一个物品
 	 */
 	@Override
 	public String selectAGoods(Model model, Integer id, String act) {
@@ -124,23 +124,23 @@ public class AdminGoodsServiceImpl implements AdminGoodsService {
 		return "admin/goodsDetail";
 	}
 	/**
-	 * 删除多个商品
+	 * 删除多个物品
 	 */
 	@Override
 	public String deleteGoods(Integer[] ids, Model model) {
 		List<Integer> list = new ArrayList<Integer>();
 		for (int i = 0; i < ids.length; i++) {
-			//商品有关联
+			//物品有关联
 			if(adminGoodsDao.selectCartGoods(ids[i]).size() > 0 ||
 					adminGoodsDao.selectFocusGoods(ids[i]).size() > 0 || 
 					adminGoodsDao.selectOrderdetailGoods(ids[i]).size() > 0) {
-				model.addAttribute("msg", "商品有关联，不允许删除");
+				model.addAttribute("msg", "物品有关联，不允许删除");
 				return "forward:/adminGoods/selectGoods?act=deleteSelect";
 			}
 			list.add(ids[i]);
 		}
 		adminGoodsDao.deleteGoods(list);
-		model.addAttribute("msg", "成功删除商品");
+		model.addAttribute("msg", "成功删除物品");
 		return "forward:/adminGoods/selectGoods?act=deleteSelect";
 	}
 

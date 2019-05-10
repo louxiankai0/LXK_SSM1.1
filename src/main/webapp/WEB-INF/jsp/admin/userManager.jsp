@@ -36,10 +36,6 @@
 
 </div>
 <div id="content">
-    <form id="form1" method="post" action="" class="form-inline">
-        <input type="text" name="gname" placeholder="按事项名称搜索!" autofocus class="form-control input-sm"/>
-        <input type="submit" value="搜 索" class="btn btn-warning btn-sm"/>
-    </form>
     <form id="form2" action="#" name="deleteForm">
         <table class="table table-bordered table-hover">
             <tr>
@@ -52,7 +48,7 @@
                 <tr>
                     <td>${n.id}</td>
                     <td>${n.bemail}</td>
-                    <td><input type="password" value="${n.bpwd}" readonly></td>
+                    <td>${n.bpwd}</td>
                     <td>
                         <a href="javaScript:checkDel('${n.id}')">删除</a>
                     </td>

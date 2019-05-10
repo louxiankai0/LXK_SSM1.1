@@ -29,7 +29,7 @@ public class AdminTypeController extends BaseController {
 		return adminTypeService.selectType(model, pageCur, act);
 	}
 	/**
-	 * 查询一个商品
+	 * 查询一个物品
 	 */
 	@RequestMapping("/selectAType")
 	public String selectAType(Model model, Integer id, String act){
@@ -51,14 +51,14 @@ public class AdminTypeController extends BaseController {
 		return adminTypeService.addOrUpdateType(goodstype, request, updateAct);
 	}
 	/**
-	 * 删除多个商品
+	 * 删除多个物品
 	 */
 	@RequestMapping("/deleteType")
 	public String deleteType(Integer ids[], Model model) {
 		return adminTypeService.deleteType(ids, model);
 	}
 	/**
-	 * 删除一个商品
+	 * 删除一个物品
 	 */
 	@RequestMapping("/deleteAType")
 	public String deleteAType(Integer id, Model model) {

@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
 <base href="<%=basePath%>">
-<title>商品详情</title>
+<title>物品详情</title>
 <link href="css/before/daohang.css" rel="stylesheet" type="text/css" />
 <link href="css/before/common.css" rel="stylesheet" type="text/css" />
 <link href="css/before/style.css" rel="stylesheet" type="text/css" />
@@ -34,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="blank"></div>
 		<div class="block clearfix">
 			<div class="location ared">
-				当前位置：<a href="#">首页</a> > <a href="#">商品详情</a>
+				当前位置：<a href="before?id=0">首页</a> > <a href="goodsDetail?id=${goods.id }">物品详情</a>
 			</div>
 			<div class="blank"></div>
 			<div id="goodsInfo">
@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						width="230px" height="230px" />
 				</div>
 			</div>
-			<!--商品表述-->
+			<!--物品表述-->
 			<div class="goods_desc">
 				<div class="bt">
 					${goods.gname }
@@ -53,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="goods_show">
 					<ul>
 						<li><span>价格:</span> <strong class="yj">${goods.goprice }元</strong></li>
-						<li><span>折扣价:</span><strong
+						<li><span>租借价:</span><strong
 							class="xj">${goods.grprice}元/次</strong>
 						</li>
 						<li><span>类型:</span> ${goods.typename}</li>

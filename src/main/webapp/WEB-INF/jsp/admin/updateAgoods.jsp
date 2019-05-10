@@ -35,7 +35,7 @@
 <div id="header">
     <ul class="nav nav-tabs">
         <li class="active">
-            <a href="javascript:history.back();">商品管理</a>
+            <a href="javascript:history.back();">物品管理</a>
         </li>
     </ul>
 </div>
@@ -43,36 +43,36 @@
 <div id="content">
     <form:form action="adminGoods/addGoods?updateAct=update" method="post" modelAttribute="goods" enctype="multipart/form-data" id="form1">
         <dl>
-            <dt>修改商品</dt>
+            <dt>修改物品</dt>
 
             <table border=1 class="table table-bordered table-hover">
                 <tr>
-                    <td>名称<font color="red">*</font></td>
+                    <td>名称<a style="color: red">*</a></td>
                     <td>
                         <input type="text" name="gname" value="${goods.gname}" autofocus class="form-control input-size" required/>
                         <input type="hidden" name="id" value="${goods.id}">
                     </td>
                 </tr>
                 <tr>
-                    <td>原价<font color="red">*</font></td>
+                    <td>原价<a style="color: red">*</a></td>
                     <td>
                         <input type="text" name="goprice" value="${goods.goprice}" autofocus class="form-control input-size" required/>
                     </td>
                 </tr>
                 <tr>
-                    <td>折扣价<font color="red">*</font></td>
+                    <td>租借价<a style="color: red">*</a></td>
                     <td>
                         <input type="text" name="grprice" value="${goods.grprice}" autofocus class="form-control input-size" required/>
                     </td>
                 </tr>
                 <tr>
-                    <td>库存<font color="red">*</font></td>
+                    <td>库存<a style="color: red">*</a></td>
                     <td>
                         <input type="text" name="gstore" value="${goods.gstore}" autofocus class="form-control input-size" required/>
                     </td>
                 </tr>
                 <tr>
-                    <td>图片<font color="red">*</font></td>
+                    <td>图片<a style="color: red">*</a></td>
                     <td>
                         <input type="file" name="logoImage" value="${goods.gpicture}"/>
                         <!-- 从数据库取出的文件名 -->
@@ -83,7 +83,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>类型<font color="red">*</font></td>
+                    <td>类型<a style="color: red">*</a></td>
                     <td>
                         <form:select path="goodstype_id">
                             <form:options items="${goodsType }" itemLabel="typename" itemValue="id"/>

@@ -22,7 +22,7 @@ public class AdminServiceImpl implements AdminService {
 	public String login(Auser auser, Model model, HttpSession session) {
 		if(adminDao.login(auser) != null && adminDao.login(auser).size() > 0) {
 			session.setAttribute("auser", auser);
-			//添加商品与修改商品页面使用
+			//添加物品与修改物品页面使用
 			session.setAttribute("goodsType", adminTypeDao.selectGoodsType());
 			return "admin/main";
 		}

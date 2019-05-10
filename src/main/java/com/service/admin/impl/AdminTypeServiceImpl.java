@@ -110,7 +110,7 @@ public class AdminTypeServiceImpl implements AdminTypeService {
 	public String deleteType(Integer[] ids, Model model) {
 		List<Integer> list = new ArrayList<Integer>();
 		for (int i = 0; i < ids.length; i++) {
-			//商品有关联
+			//物品有关联
 			if(adminTypeDao.selectGoodsByType(ids[i]).size() > 0 ) {
 				model.addAttribute("msg", "类型有关联，不允许删除");
 				return "forward:/adminType/selectType?act=deleteSelect";

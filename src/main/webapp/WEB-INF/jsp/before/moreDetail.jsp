@@ -21,12 +21,12 @@
 <body>
 <div class="blank"></div>
 <div class="block clearfix">
-    <!--最新商品列表-->
+    <!--最新物品列表-->
     <div class="blank5"></div>
     <div class="box">
         <div class="box_color ared">
             <div class="title_bt">
-                <h3>所有商品</h3>
+                <h3>所有物品</h3>
             </div>
             <div class="itemgood_nr clearfix">
                 <ul>
@@ -39,7 +39,7 @@
                                 </p>
                                 <p class="wz">
                                     <strong><a href="goodsDetail?id=${sg.id }">${sg.gname }</a></strong>
-                                    <em>现价:<span>￥${sg.grprice}/次</span></em>
+                                    <em>租借价:<span>￥${sg.grprice}/次</span></em>
                                 </p>
                             </div>
                         </li>
@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-    <!--最新商品列表end-->
+    <!--最新物品列表end-->
 </div>
 
 </body>

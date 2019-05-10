@@ -49,13 +49,13 @@
             <dt>添加公告</dt>
             <table border=1 class="table table-bordered table-hover">
                 <tr>
-                    <td>标题<font color="red">*</font></td>
+                    <td>标题<a style="color: red">*</a></td>
                     <td>
                         <input type="text" name="ntitle" autofocus class="form-control input-size" required/>
                     </td>
                 </tr>
                 <tr>
-                    <td>内容<font color="red">*</font></td>
+                    <td>内容<a style="color: red">*</a></td>
                     <td>
                         <textarea  name="ncontent" autofocus class="form-control text-area" required></textarea>
                     </td>

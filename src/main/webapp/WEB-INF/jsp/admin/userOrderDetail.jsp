@@ -37,9 +37,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  <form id="form2" action="#" name="deleteForm">
 		  <table class="table table-bordered table-hover">
 			  <tr>
-				  <th>商品编号</th>
-				  <th>商品名称</th>
-				  <th>商品价格</th>
+				  <th>物品编号</th>
+				  <th>物品名称</th>
+				  <th>物品价格</th>
 				  <th>购买数量</th>
 				  <th>是否归还</th>
 				  <th>归还日期</th>

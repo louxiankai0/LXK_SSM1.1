@@ -30,14 +30,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
 	<div class="blank"></div>
 	<div class="block clearfix"><!--当前位置-->
-	<div class="location ared">当前位置：<a href="">首页</a> > 购物流程 > 确认订单信息</div>
+	<div class="location ared">当前位置：<a href="before?id=0">首页</a> > 租借流程 > 确认订单信息</div>
 	<div class="blank"></div>
 			<div class="nFlowBox">
    <form action="" method="post">
-    <h6>商品列表</h6>
+    <h6>物品列表</h6>
              <table width="100%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tr>
-              <th bgcolor="#ffffff">商品名称</th>
+              <th bgcolor="#ffffff">物品名称</th>
               <th bgcolor="#ffffff">市场价格</th>
               <th bgcolor="#ffffff">购买数量</th>
               <th bgcolor="#ffffff">小计</th>
@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        	  	<tr>
        	  		<td bgcolor="#ffffff" colspan="4" align="right">
        	 			应付款 
-       	 			<font class="pricetype" size="5" color="red">￥&nbsp;${total}&nbsp;元</font>  	
+       	 			<a class="pricetype" style="font-size: 20px;color: red" >￥&nbsp;${total}&nbsp;元</a>
               </td>
           </tr>   	
         </table>   

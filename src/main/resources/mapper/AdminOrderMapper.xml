@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.AdminOrderDao">
 	<select id="orderInfo"  resultType="map" >
 		select ot.id, ot.amount, ot.status,  orderdate, bt.bemail, ot.busertable_id 
-		from ORDERBASETABLE ot, BUSERTABLE bt where ot.busertable_id=bt.id
+		from orderbasetable ot, busertable bt where ot.busertable_id=bt.id
 	</select>
 	<delete id="deleteOrderDetail" parameterType="Integer">
 		delete from orderdetail where orderbasetable_id=#{id}
@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from orderbasetable where id=#{id}
 	</delete>
 	<select id="orderDetail" resultType="map"  parameterType="Integer">
-		select odt.oid, gt.id, gt.gname, gt.goprice, gt.grprice, gt.gstore, gt.gpicture, odt.shoppingnum, odt.status, odt.returndate from  GOODSTABLE gt, ORDERDETAIL odt
+		select odt.oid, gt.id, gt.gname, gt.goprice, gt.grprice, gt.gstore, gt.gpicture, odt.shoppingnum, odt.status, odt.returndate from  goodstable gt, orderdetail odt
 		where  odt.orderbasetable_id=#{ordersn} and gt.id=odt.goodstable_id
 	</select>
 

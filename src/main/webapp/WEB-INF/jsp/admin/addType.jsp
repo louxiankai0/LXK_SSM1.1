@@ -49,7 +49,7 @@
             <dt>添加类型</dt>
             <table border=1 class="table table-bordered table-hover">
                 <tr>
-                    <td>类型名称<font color="red">*</font></td>
+                    <td>类型名称<a style="color: red">*</a></td>
                     <td>
                         <input type="text" name="typename" autofocus class="form-control input-size" required/>
                     </td>

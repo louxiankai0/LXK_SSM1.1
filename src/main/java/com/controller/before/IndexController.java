@@ -37,7 +37,7 @@ public class IndexController {
 	}
 
 	/**
-	 * 转到商品详情页
+	 * 转到物品详情页
 	 */
 	@RequestMapping("/goodsDetail")
 	public String goodsDetail(Model model,Integer id) {

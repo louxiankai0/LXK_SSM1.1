@@ -20,7 +20,7 @@ public class AdminGoodsController extends BaseController {
 		return adminGoodsService.selectGoods(model, pageCur, act);
 	}
 	/**
-	 * 查询一个商品
+	 * 查询一个物品
 	 */
 	@RequestMapping("/selectAGoods")
 	public String selectAGoods(Model model, Integer id, String act){
@@ -42,7 +42,7 @@ public class AdminGoodsController extends BaseController {
 		return adminGoodsService.addOrUpdateGoods(goods, request, updateAct);
 	}
 	/**
-	 * 删除多个商品
+	 * 删除多个物品
 	 */
 	@RequestMapping("/deleteGoods")
 	public String deleteGoods(Integer ids[], Model model) {

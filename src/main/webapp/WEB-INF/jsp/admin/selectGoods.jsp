@@ -48,13 +48,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  }
 			  if(n > 1){
 				  if(count == n){
-					  alert("请选择被删除的商品！");
+					  alert("请选择被删除的物品！");
 					  count = 0;
 					  return false;
 				  }
 			  }else{
 				  if(!document.deleteForm.ids.checked){
-					  alert("请选择被删除的商品！");
+					  alert("请选择被删除的物品！");
 					  return false;
 				  }
 			  }
@@ -75,7 +75,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 <div id="header">
 	<ul class="nav nav-tabs">
-		<li class="active"><a href="adminGoods/selectGoods">商品管理</a></li>
+		<li class="active"><a href="adminGoods/selectGoods">物品管理</a></li>
 	</ul>
 
 </div>
@@ -92,7 +92,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<th>ID</th>
 			<th>名称</th>
 			<th>原价</th>
-			<th>现价</th>
+			<th>租借价</th>
 			<th>库存</th>
 			<th>详情</th>
 			<th>操作</th>

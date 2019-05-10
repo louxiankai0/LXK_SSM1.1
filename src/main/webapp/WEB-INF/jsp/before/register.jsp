@@ -29,9 +29,21 @@
 			alert("两次密码不一致！");
 			return false;
 		}
+		var email = document.registerForm.bemail.value;
+		if (!email == "") {
+			var reg =/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+			var bool = reg.test(email);
+			if (bool == false) {
+				alert("邮箱格式错误，请重新输入！");
+				email.focus();
+				return;
+			}
+		}
 		document.registerForm.submit();
 		return true;
 	}
+
 </script>
 </head>
 <body>
@@ -63,7 +75,7 @@
 							<tr>
 								<td align="right">&nbsp;</td>
 								<td colspan="2" style="font-size: 12px; padding-bottom: 25px;">
-									（有效的E-mail地址才能收到激活码，帐户在激活后才能享受网站服务。）</td>
+									（请输入Email，享受共享服务带来的便利）</td>
 							</tr>
 							<tr>
 								<td align="right"><span class="cl_f30">*</span> 密码：</td>
@@ -92,12 +104,13 @@
 								<td class="ared"><input type="text" name="code"
 									id="textfield5" class="my_txt_120" />
 									<img id="code" src="validateCode" /> 
-									<a href="javascript:refreshCode();"><font color="blue">看不清，换一个！</font></a>
+									<a href="javascript:refreshCode();"><span style="color: blue">看不清，换一个！</span></a>
 								</td>
 								<td>${codeError}</td>
 							</tr>
 							<tr>
 								<td align="right">&nbsp;</td>
+								<!-- colspan横跨两个单元格 -->
 								<td colspan="2" class="cl_f30" style="font-size: 12px; padding-bottom: 25px;"></td>
 							</tr>
 							<tr>

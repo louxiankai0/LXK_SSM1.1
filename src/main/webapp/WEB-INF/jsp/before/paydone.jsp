@@ -21,10 +21,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   	<div class="blank"></div>
 	<div class="block clearfix"><!--当前位置-->
-	<div class="location ared">当前位置：<a href="">首页</a> > 购物流程 > 支付完成</div>
+	<div class="location ared">当前位置：<a href="before?id=0">首页</a> > 租借流程 > 支付完成</div>
 	<div class="blank"></div>
 	<div class="nFlowBox">
-    <h2 style="text-align:center; height:30px; line-height:30px;">感谢您在本站购物！已成功支付！</h2>
+    <h2 style="text-align:center; height:30px; line-height:30px;">感谢您在本站租借！已成功支付！</h2>
     </div>
     </div>
   </body>

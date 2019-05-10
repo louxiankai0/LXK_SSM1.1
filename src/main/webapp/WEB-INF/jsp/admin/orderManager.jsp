@@ -60,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					  <td>${n.orderdate}</td>
 					  <td>
 						  <c:if test="${n.status == 0}" >
-							  <a href="javaScript:checkDel('${n.id}')">删除</a>
+							  <a style="color: red" href="javaScript:checkDel('${n.id}')">删除</a>
 						  </c:if>
 						  <c:if test="${n.status == 1}">
 							  <a href="adminOrder/orderDetail?ordersn=${n.id}">详情</a>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- com.dao.AdminTypeDao对应Dao接口 -->
 <mapper namespace="com.dao.AdminTypeDao">
 	<!-- 查询类型信息 -->
@@ -46,7 +46,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</set>
 		where id = #{id}
 	</update>
-	<!--查询关联商品-->
+	<!--查询关联物品-->
 	<select id="selectGoods" parameterType="Integer" resultType="map">
 		select * from goodstable where goodstype_id=#{id}
 	</select>

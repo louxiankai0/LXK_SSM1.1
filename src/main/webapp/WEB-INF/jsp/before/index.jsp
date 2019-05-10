@@ -27,11 +27,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="blank"></div>
 	<div class="block clearfix">
 		<div class="AreaL">
-			<!--销售排行-->
+			<!--租借排行-->
 			<div class="box">
 				<div class="box_2">
 					<div class="top10Tit">
-						<span>销售排行</span>
+						<span>租借排行</span>
 					</div>
 					<div class="top10List clearfix">
 						<c:forEach items="${salelist }" var="sg" varStatus="status">
@@ -42,13 +42,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<img class="samllimg" alt="" src="logos/${sg.gpicture}" /></a></li>
 								<li class="iteration1">
 								<a href="goodsDetail?id=${sg.id }">${sg.gname }</a><br />
-								 售价：<font class="f1">￥${sg.grprice }元/次</font><br /></li>
+								 租借价：<a class="f1">￥${sg.grprice }元/次</a><br /></li>
 							</ul>
 						</c:forEach>
 					</div>
 				</div>
 			</div>
-			<!--销售排行 end -->
+			<!--租借排行 end -->
 			<!--人气排行-->
 			<div class="blank5"></div>
 			<div class="box">
@@ -65,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<img class="samllimg" alt="" src="logos/${sg.gpicture}" /></a></li>
 							<li class="iteration1">
 							<a href="goodsDetail?id=${sg.id }">${sg.gname }</a><br />
-							 售价：<font class="f1">￥${sg.grprice }元/次</font><br /></li>
+							 租借价：<a class="f1">￥${sg.grprice }元/次</a><br /></li>
 						</ul>
 					</c:forEach>
 					</div>
@@ -100,13 +100,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</div>
 			<div class="AreaR">
-				<!--最新商品列表-->
+				<!--最新物品列表-->
 				<div class="blank5"></div>
 				<div class="box">
 					<div class="box_color ared">
 						<div class="title_bt">
 							<span><a href="moreDetail">更多</a></span>
-							<h3>最新商品</h3>
+							<h3>最新物品</h3>
 						</div>
 						<div class="itemgood_nr clearfix">
 							<ul>
@@ -119,7 +119,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</p>
 											<p class="wz">
 												<strong><a href="goodsDetail?id=${sg.id }">${sg.gname }</a></strong>
-												<em>现价:<span>￥${sg.grprice}/次</span></em>
+												<em>租借价:<span>￥${sg.grprice}/次</span></em>
 											</p>
 										</div>
 									</li>
@@ -128,7 +128,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 					</div>
 				</div>
-				<!--最新商品列表end-->
+				<!--最新物品列表end-->
 			</div>
 		</div>
 	</div>

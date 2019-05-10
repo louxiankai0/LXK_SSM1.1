@@ -14,7 +14,7 @@ public class CartController extends BaseBeforeController {
 	@Autowired
 	private CartService cartService;
 	/**
-	 * 关注商品
+	 * 关注物品
 	 */
 	@RequestMapping("/focus")
 	public String focus(Model model,Integer id, HttpSession session) {

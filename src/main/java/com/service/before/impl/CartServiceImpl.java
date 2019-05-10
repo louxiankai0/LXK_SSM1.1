@@ -25,11 +25,11 @@ public class CartServiceImpl implements CartService {
 		map.put("gid", id);
 		List<Map<String, Object>> list = cartDao.isFocus(map);
 		if(list.size() > 0) {
-			model.addAttribute("msg", "已关注该商品！");
+			model.addAttribute("msg", "已关注该物品！");
 		}else {
 			int n = cartDao.focus(map);
 			if(n > 0){
-				model.addAttribute("msg", "成功关注该商品！");
+				model.addAttribute("msg", "成功关注该物品！");
 			}
 			else{
 				model.addAttribute("msg", "关注失败！");
