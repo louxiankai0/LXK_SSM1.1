@@ -31,14 +31,17 @@ public class AdminGoodsServiceImpl implements AdminGoodsService {
 		发布后使用*/
 		//防止文件重名
 		String newFileName = "";
+		//getOriginalFilename得到上传文件的名字
 		String fileName = goods.getLogoImage().getOriginalFilename(); 
 		//选择了文件
 		if(fileName.length() > 0){
+			//获取request中servlet运行路径
 			String realpath = request.getSession().getServletContext().getRealPath("logos");
-			//实现文件上传
+			//获取后缀名 substring返回子字符串
 			String fileType = fileName.substring(fileName.lastIndexOf('.'));
 			//防止文件重名
 			newFileName = MyUtil.getStringID() + fileType;
+			//将新文件名set到goods中
 			goods.setGpicture(newFileName);
 			File targetFile = new File(realpath, newFileName);
 			//判断targetFile是否存在

@@ -7,7 +7,7 @@
 	<select id="selectGoods"  resultType="Goods">
 		select * from goodstable
 	</select>
-	<!-- 分页查询物品 -->
+	<!-- 数据库分页查询物品 -->
 	<select id="selectAllGoodsByPage"  resultType="Goods" parameterType="map">
 		select * from goodstable order by id limit #{startIndex}, #{perPageSize}
 	</select>
